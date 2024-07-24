@@ -6,7 +6,7 @@ const TodoList = () => {
   const [todos, setTodos] = useState([]);
   const [newTodoTitle, setNewTodoTitle] = useState('');
   const [newTodoContent, setNewTodoContent] = useState('');
-  const [currentTodo, setCurrentTodo] = useState(null);
+  const [currentTodo, setCurrentTodo] = useState('');
 
   const handleAddTodo = () => {
     if (newTodoTitle.trim() === '') return;
@@ -47,7 +47,7 @@ const TodoList = () => {
           onChange={(e) => setNewTodoContent(e.target.value)}
           placeholder="Enter task details..."
         />
-        <button onClick={handleAddTodo}>Add</button>
+        <button className="add-button" onClick={handleAddTodo}>Add Task</button>
       </div>
       <div className="card-container">
         {todos.map((todo) => (
